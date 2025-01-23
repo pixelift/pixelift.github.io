@@ -28,8 +28,8 @@ body {
 }
 
 html {
-    color-scheme: dark;
     background-color: #121212;
+    color-scheme: dark;
     font-family: "Inter", Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -65,24 +65,32 @@ a {
 }
 
 nav {
-    padding-block: 1rem;
+    padding-block: 2rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     position: sticky;
     top: 0;
-    background-color: #121212;
+    z-index: 10;
 }
 
 nav.scrolling {
     transform: translateY(-100%);
 }
 
-
 nav ul {
     display: flex;
     justify-content: center;
     gap: 2rem;
+}
+
+
+nav a {
+    color: rgb(170, 170, 170);
+}
+
+nav a:hover {
+    color: white;
 }
 
 nav img {
@@ -111,13 +119,6 @@ button.primary {
     border: 0;
 }
 
-#about {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: self-start;
-}
-
 main {
     width: min(1100px, calc(100% - 4rem));
     margin-inline: auto;
@@ -127,13 +128,19 @@ section {
     min-height: 100dvh;
 }
 
-section:first-of-type {
-    min-height: calc(100dvh - 75px);
+#about {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5rem;
+}
+
+#about > div {
+    flex: 1;
 }
 
 .color, .letter-logo {
     color: rgb(var(--clr_main));
-    font-family: "Jetbrains Mono";
 }
 
 .letter-logo {
@@ -148,7 +155,6 @@ section:first-of-type {
 }
 
 .subtext {
-    max-width: 60ch;
     line-height: 1.5;
     font-weight: 300;
     text-transform: lowercase;
@@ -228,4 +234,16 @@ section:first-of-type {
 
 .project-data svg {
     width: clamp(1.5rem, 1.2143rem + 1.1429vw, 2rem);
+}
+
+.pixelift {
+    position: relative;
+}
+
+.pixelift::after {
+    content: "pixelift";
+    position: absolute;
+    font-size: 10Px;
+    color: rgb(170, 170, 170);
+    transform: translate(-50%, -50%);
 }
