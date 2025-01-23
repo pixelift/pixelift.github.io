@@ -1,0 +1,5 @@
+RewriteEngine On
+RewriteRule ^home$ index.html [L]
+
+# Prevent directory listing
+Options -Indexes

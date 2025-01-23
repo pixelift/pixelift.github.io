@@ -1,0 +1,94 @@
+@font-face {
+    font-family: "Inter";
+    src: url(./static/fonts/InterVariable.ttf);
+}
+
+@font-face {
+    font-family: "Inter Italic";
+    src: url(./static/fonts/InterVariable-Italic.ttf);
+}
+
+:root {
+    --clr_main: aquamarine;
+}
+
+body {
+    margin: 2rem;
+}
+
+html {
+    color-scheme: dark;
+    font-family: "Inter", Verdana, Geneva, Tahoma, sans-serif;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6, p, ul {
+    margin: 0;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+nav img {
+    max-width: 32Px;
+}
+
+nav i {
+    font-size: 24Px;
+}
+
+main {
+    width: min(1100px, calc(100% - 4rem));
+    margin-inline: auto;
+}
+
+section {
+    margin-block: 10rem;
+}
+
+.color {
+    color: var(--clr_main);
+}
+
+.letter-logo {
+    font-weight: bold;
+    font-size: clamp(1.5rem, 1.2143rem + 1.1429vw, 2rem);
+    color: var(--clr_main);
+}
+
+.subtitle, .subtext {
+    color: rgb(170, 170, 170);
+}
+
+.subtext {
+    max-width: 60ch;
+    line-height: 1.5;
+}
+
+.title {
+    font-size: clamp(1.5rem, 0.2143rem + 5.1429vw, 3.75rem);
+    margin-block: 1rem;
+}
