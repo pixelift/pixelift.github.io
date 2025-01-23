@@ -69,6 +69,20 @@ section {
     margin-block: 10rem;
 }
 
+#about {
+    position: relative;
+}
+
+#about::before {
+    content: "About Me";
+    position: absolute;
+    left: -5ch;
+    top: 50%;
+    transform: translateY(-50%);
+    writing-mode: vertical-rl;
+    text-orientation:sideways-right;
+}
+
 .color {
     color: var(--clr_main);
 }
