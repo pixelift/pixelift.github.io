@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>pixelift portfolio</title>
 
+    <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/all.css">
 </head>
@@ -19,14 +20,52 @@
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <a href="https://github.com/pixelift" target="_blank"><img src="./static/imgs/github-mark.svg" alt="Github Logo Mark"></a>
+            <a href="https://github.com/pixelift" target="_blank"><img src="./static/imgs/github-mark.svg"
+                    alt="Github Logo Mark"></a>
         </nav>
-        <section id="about">
-            <h1 class="title">I'm <span class="color">Vito</span>, <br> web developer.</h1>
+        <article>
+            <section id="about">
+                <h3 class="subtitle">#about</h3>
+                <h1 class="title">I'm <span class="color">Vito</span>, <br>a web developer.</h1>
+    
+                <p class="subtext">
+                    I’m a self-taught developer from Slovakia. For the past 4 years, I’ve been coding part-time as a
+                    freelancer. Started with basics like HTML/CSS and JavaScript later on even HTMX, then discovered SQL and Lua. I prefer
+                    simple, straightforward tools over unnecessary complexity—most of the time, plain gets the job done.
+                    <br><br>
+                    simplicity is the way to heaven.
+                </p>
+                <button class="primary">contact me</button>
+            </section>
+            <section id="projects">
+                <h3 class="subtitle">#projects</h3>
 
-            <p class="subtext">I live in Slovakia and do development as a freelancer. I have been learning how to code
-                for the past 4 years, slowly and gradually pacing up. I can work work in a team or solo, depending on the task, I have no issues regarding communication, learning or picking up the pace.</p>
-        </section>
+                <div class="projects">
+                    <div class="project">
+                        <img src="./static/imgs/image.jpg" alt="">
+                        <div class="project-data">
+                            <a href="https://racesim.sk/" target="_blank">RaceSim
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                                </svg>
+                            </a>
+                            <p>PHP, JQUERY, HTMX</p>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <img src="./static/imgs/image(1).jpg" alt="">
+                        <div class="project-data">
+                            <a href="https://nolimithost.cc/" target="_blank">Nolimithost
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                                </svg>
+                            </a>
+                            <p>PHP, JQUERY, HTMX, FIGMA</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </article>
         <footer>
 
         </footer>
