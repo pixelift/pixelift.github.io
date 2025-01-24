@@ -6,7 +6,6 @@ function getLang() {
 
 window.addEventListener("load", () => {
   let previousPosition = 0.0;
-  
   const nav = document.querySelector("nav");
 
   addEventListener("scroll", () => {
