@@ -43,7 +43,7 @@ nav {
     backdrop-filter: blur(8px);
     background-color: rgba(18, 18, 18, 0.8);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 1rem 2rem;
+    padding: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -77,7 +77,7 @@ nav .github-link img {
 }
 
 section {
-    width: min(1200px, calc(100% - 2rem));
+    width: min(1200px, 100%);
     min-height: calc(100vh - 64px);
 
     padding: 0 1rem;
@@ -91,8 +91,9 @@ section {
 }
 
 .title {
-    font-size: clamp(3rem, 10vw, 4.5rem);
+    font-size: clamp(3.75rem, 10vw, 5rem);
     margin-bottom: 1rem;
+    line-height: 120%;
     position: relative;
 }
 
@@ -156,7 +157,7 @@ section {
 
 .projects {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fill, min(560px, 100%));
     gap: 1.5rem;
 }
 
@@ -179,10 +180,14 @@ section {
     bottom: 0;
     left: 0;
     width: 100%;
+    height: 100%;
     padding: 1rem;
     background: linear-gradient(0deg, rgba(0,0,0,0.8) 0%, transparent 80%);
-    opacity: 0;
     transition: opacity 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    cursor: pointer;
 }
 
 .project:hover .project-data {
