@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ project.name }} - Pixelift</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <nav class="wrapper">
+        <ul class="nav-items">
+            <li><a href="/"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left-from-line"><path d="m9 6-6 6 6 6"/><path d="M3 12h14"/><path d="M21 19V5"/></svg> Back to Portfolio</a></li>
+        </ul>
+    </nav>
+
+    <section class="project-details wrapper">
+        <img src="/static/{{ project.image_path }}" alt="{{ project.name }}" class="project-hero-image">
+        
+        <div class="project-info">
+            <h1>{{ project.name }}</h1>
+            <div class="project-links">
+                {% if project.url %}
+                <a href="{{ project.url }}" target="_blank" class="button primary">Visit Site</a>
+                {% endif %}
+                {% if project.github_url %}
+                <a href="{{ project.github_url }}" target="_blank" class="button outline">View Code</a>
+                {% endif %}
+            </div>
+            
+            <div class="project-tech">
+                <h3>Technologies</h3>
+                <p>{{ project.technologies }}</p>
+            </div>
+
+            <div class="project-description">
+                <h3>About this project</h3>
+                {{ project.long_description | safe }}
+            </div>
+        </div>
+    </section>
+</body>
+</html> 

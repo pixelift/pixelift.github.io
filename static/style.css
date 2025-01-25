@@ -1,21 +1,21 @@
 @font-face {
     font-family: "Inter";
-    src: url(./static/fonts/InterVariable.ttf);
+    src: url(fonts/InterVariable.ttf);
 }
 
 @font-face {
     font-family: "Inter Italic";
-    src: url(./static/fonts/InterVariable-Italic.ttf);
+    src: url(fonts/InterVariable-Italic.ttf);
 }
 
 @font-face {
     font-family: "Jetbrains";
-    src: url(./static/fonts/JetBrainsMono[wght].ttf);
+    src: url(fonts/JetBrainsMono[wght].ttf);
 }
 
 @font-face {
     font-family: "Jetbrains Italic";
-    src: url(./static/fonts/JetBrainsMono-Italic[wght].ttf);
+    src: url(fonts/JetBrainsMono-Italic[wght].ttf);
 }
 
 :root {
@@ -53,6 +53,14 @@ nav ul {
     display: flex;
     gap: 2rem;
     list-style: none;
+}
+
+nav ul li a:has(svg) {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    gap: 0.5rem;
+    width: fit-content;
 }
 
 nav a {
@@ -166,6 +174,7 @@ section {
 }
 
 .project {
+    display: unset;
     position: relative;
     border-radius: 0.5rem;
     overflow: hidden;
@@ -222,6 +231,17 @@ section {
     margin-top: 0.5rem;
 }
 
+.project-data h1 {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.project-data h1:has(svg) {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
 .project-data a {
     display: flex;
     align-items: center;
@@ -243,50 +263,41 @@ footer {
     font-size: 0.875rem;
 }
 
-.admin-container {
-    max-width: 800px;
-    margin: 2rem auto;
-    padding: 2rem;
-}
-
-.form-group {
-    margin-bottom: 1rem;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.form-group textarea {
-    height: 150px;
-}
-
-button[type="submit"] {
-    background: #000;
-    color: #fff;
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-button[type="submit"]:hover {
-    opacity: 0.9;
-} 
-
 @media (max-width: 1024px) {
     .projects {
         grid-template-columns: repeat(1, 1fr);
     }
 }
 
+.project-details {
+    padding: 2rem 1rem;
+}
+
+.project-hero-image {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.project-info h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.project-links {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.project-tech,
+.project-description {
+    margin-bottom: 2rem;
+}
+
+.project-tech h3,
+.project-description h3 {
+    color: rgb(var(--clr_main));
+    margin-bottom: 1rem;
+}

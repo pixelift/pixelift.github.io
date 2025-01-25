@@ -7,9 +7,9 @@ HTML, CSS, JS, PYTHON, SQLITE
 
 ## Project Core Features
 1. Project showcase
-    - Projects are displayed in a grid layout with a hover effect.
-    - Each project card displays the project name, description, and technologies used.
-    - Clicking on a project card opens a new subpage with more details about the project.
+    1.1 Projects are displayed in a grid layout with a hover effect.
+    1.2 Each project card displays the project name, description, and technologies used.
+    1.3 Clicking on a project card opens a new subpage with more details about the project.
 2. Panel for adding new project
     2.1 A panel for adding new projects is available to the admin.
     2.2 The panel allows the admin to add a new project to the portfolio.
@@ -28,18 +28,22 @@ HTML, CSS, JS, PYTHON, SQLITE
 
 ## Project Structure
 ├── app.py
-├── templates
-    ├── admin.html
-    ├── home.html
+├── instructions.md
 ├── static
     ├── fonts
     │   ├── InterVariable-Italic.ttf
     │   ├── InterVariable.ttf
     │   ├── JetBrainsMono-Italic[wght].ttf
     │   └── JetBrainsMono[wght].ttf
-    └── uploads
-    └── imgs
+    ├── imgs
+    │   ├── carmarket_tablet.jpg
     │   ├── github-mark.svg
-    │   ├── image(1).jpg
-    │   └── image.jpg
-    └── style.css
+    │   ├── loading_screen.jpg
+    │   ├── nolimithost.jpg
+    │   └── racesim.jpg
+    ├── style.css
+    └── uploads
+    │   └── image-0R7spRun8Z3syxgXnF3YGmokZFu64T.avif
+└── templates
+    ├── admin.html
+    └── index.html
