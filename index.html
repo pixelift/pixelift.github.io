@@ -9,18 +9,18 @@
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/all.css">
-    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" /> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" /> 
 </head>
 
 <body>
+    <nav>
+        <ul class="nav-items wrapper">
+            <li><a href="#about">about</a></li>
+            <li><a href="#projects">projects</a></li>
+            <li><a href="#contact">contact</a></li>
+        </ul>
+    </nav>
     <main>
-        <nav class="wrapper">
-            <ul class="nav-items">
-                <li><a href="#about">about</a></li>
-                <li><a href="#projects">projects</a></li>
-                <li><a href="#contact">contact</a></li>
-            </ul>
-        </nav>
         <section id="about" class="flex">
             <div class="hero">
                 <h1 class="title">Hi, I'm <span class="color pixelift">Vito</span>,<br>a web dev.
@@ -115,8 +115,19 @@
             </div>
         </section>
 
-        <section id="contact">
-            <h3 class="subtitle">Contact</h3>
+        <section id="contact" class="flex flex-col">
+            <h1 class="title color-main">Get In Touch</h1>
+            <p class="subtext" style="text-align: center;">I'm always open to new opportunities and collaborations. Feel free to reach out to me via email or github.</p>
+            <div class="button-group">
+                <a href="mailto:pixelift@proton.me" class="button primary">
+                    <i class="fa-solid fa-envelope"></i>
+                    Email
+                </a>
+                <a href="https://github.com/pixelift" class="button outline">
+                    <i class="fa-brands fa-github"></i>
+                    Github
+                </a>
+            </div>
         </section>
 
         <footer>
