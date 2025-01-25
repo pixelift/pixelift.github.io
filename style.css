@@ -1,21 +1,21 @@
 @font-face {
     font-family: "Inter";
-    src: url(fonts/InterVariable.ttf);
+    src: url(./static/fonts/InterVariable.ttf);
 }
 
 @font-face {
     font-family: "Inter Italic";
-    src: url(fonts/InterVariable-Italic.ttf);
+    src: url(./static/fonts/InterVariable-Italic.ttf);
 }
 
 @font-face {
     font-family: "Jetbrains";
-    src: url(fonts/JetBrainsMono[wght].ttf);
+    src: url(./static/fonts/JetBrainsMono[wght].ttf);
 }
 
 @font-face {
     font-family: "Jetbrains Italic";
-    src: url(fonts/JetBrainsMono-Italic[wght].ttf);
+    src: url(./static/fonts/JetBrainsMono-Italic[wght].ttf);
 }
 
 :root {
@@ -55,14 +55,6 @@ nav ul {
     list-style: none;
 }
 
-nav ul li a:has(svg) {
-    display: flex;
-    align-items: center;
-    white-space: nowrap;
-    gap: 0.5rem;
-    width: fit-content;
-}
-
 nav a {
     color: rgb(170, 170, 170);
     text-decoration: none;
@@ -88,18 +80,14 @@ section {
     width: min(1200px, 100%);
     min-height: calc(100vh - 64px);
 
-    padding: 1rem;
+    padding: 0 1rem;
     margin: 0 auto;
     
     &.flex {
         display: flex;
         align-items: center;
+        justify-content: center;
     }
-}
-
-.wrapper {
-    width: min(1200px, 100%);
-    margin: 0 auto;
 }
 
 .title {
@@ -114,7 +102,7 @@ section {
 }
 
 .pixelift-tag {
-    font-size: 0.75rem;
+    font-size: 0.5rem;
     color: rgb(170, 170, 170);
     position: absolute;
     top: 0;
@@ -125,7 +113,7 @@ section {
 .subtext {
     font-family: "Jetbrains Mono", monospace;
     color: rgb(170, 170, 170);
-    max-width: 60ch;
+    max-width: 65ch;
     margin-bottom: 2rem;
     text-transform: lowercase;
 }
@@ -162,19 +150,18 @@ section {
 }
 
 .subtitle {
-    color: rgb(var(--clr_main));
-    margin-block: 4rem 2rem;
-    text-transform: uppercase;
+    font-family: "Jetbrains Mono", monospace;
+    color: rgb(170, 170, 170);
+    margin-bottom: 2rem;
 }
 
 .projects {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fill, min(560px, 100%));
     gap: 1.5rem;
 }
 
 .project {
-    display: unset;
     position: relative;
     border-radius: 0.5rem;
     overflow: hidden;
@@ -183,16 +170,12 @@ section {
 
 .project-image {
     width: 100%;
-    height: 100%;
-    aspect-ratio: 16/9;
-    filter: grayscale(1) blur(2Px);
-    object-fit: contain;
-    object-position: left;
-    transition: filter 300ms ease;
+    height: auto;
+    filter: grayscale(1);
+    transition: filter 0.3s ease;
 }
 
 .project-data {
-    text-shadow: 0 0 10px rgba(0, 0, 0, .25);
     position: absolute;
     bottom: 0;
     left: 0;
@@ -216,30 +199,17 @@ section {
 }
 
 .project-link {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
     color: white;
-    font-weight: bold;
-    text-decoration: none;
 }
 
 .project-data p {
     font-family: "Jetbrains Mono", monospace;
-    color: rgb(170, 170, 170);
+    color: rgb(var(--clr_main));
     margin-top: 0.5rem;
-}
-
-.project-data h1 {
-    font-size: 1.5rem;
-    color: white;
-}
-
-.project-data h1:has(svg) {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
 }
 
 .project-data a {
@@ -261,43 +231,4 @@ footer {
     font-family: "Jetbrains Mono", monospace;
     color: rgb(170, 170, 170);
     font-size: 0.875rem;
-}
-
-@media (max-width: 1024px) {
-    .projects {
-        grid-template-columns: repeat(1, 1fr);
-    }
-}
-
-.project-details {
-    padding: 2rem 1rem;
-}
-
-.project-hero-image {
-    width: 100%;
-    height: auto;
-    border-radius: 0.5rem;
-    margin-bottom: 2rem;
-}
-
-.project-info h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-.project-links {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 2rem;
-}
-
-.project-tech,
-.project-description {
-    margin-bottom: 2rem;
-}
-
-.project-tech h3,
-.project-description h3 {
-    color: rgb(var(--clr_main));
-    margin-bottom: 1rem;
 }
