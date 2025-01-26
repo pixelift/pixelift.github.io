@@ -43,7 +43,7 @@ nav {
     backdrop-filter: blur(8px);
     background-color: rgba(18, 18, 18, 0.8);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 1rem;
+    padding-block: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -53,6 +53,7 @@ nav ul {
     display: flex;
     gap: 2rem;
     list-style: none;
+    align-items: center;
 }
 
 nav a {
@@ -77,8 +78,17 @@ nav .github-link img {
 }
 
 .wrapper, section {
-    width: min(1200px, 100%);
+    width: min(1200px, calc(100% - 2rem));
     margin: 0 auto;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-left: auto;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
 }
 
 section {
@@ -144,6 +154,8 @@ section {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
+    width: 100%;
+    align-items: center;
 }
 
 .button {
@@ -331,6 +343,10 @@ footer {
 
     .hero a, section .button {
         width: 100%;
+    }
+
+    #contact .button-group {
+        flex-wrap: unset;
     }
 
     .hero a {
