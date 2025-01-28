@@ -34,6 +34,10 @@ body {
     color: white;
     font-family: "Inter", Verdana, Geneva, Tahoma, sans-serif;
     line-height: 1.6;
+
+    background-image: url(../static/imgs/topo.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 nav {
@@ -206,10 +210,20 @@ section {
 }
 
 .project {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     position: relative;
     border-radius: 0.5rem;
     overflow: hidden;
     transition: transform 0.3s ease;
+}
+
+.project * {
+    opacity: .75;
+}
+
+
+.project:hover * {
+    opacity: 1;
 }
 
 .project-image {
@@ -243,6 +257,7 @@ section {
     font-size: 2rem;
     font-weight: bold;
     text-transform: capitalize;
+    text-shadow: 0 0 8px rgba(var(--clr_main), 0.3);
 }
 
 .project:hover .project-data {

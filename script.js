@@ -32,18 +32,53 @@ const projectData = {
         stack: ["js", "lua", "figma"],
     },
     car_market: {
-        title: "Car Market Tablet",
+        title: "Car Tablet",
         description: "Car Market Tablet made to be used in FiveM, with a custom tablet made in JS. Users have the ability to buy any cars that are added via the config file, even if they are addon cars or vanilla cars. Players can pay via specialized currency or money if configured.",
         image: "./static/imgs/car_market.png",
         stack: ["js", "lua"],
     },
     resell_tablet: {
-        title: "Resell Tablet",
+        title: "Market Tablet",
         description: "Resell Tablet made to be used in FiveM, let players advert their items that they need to sell, creates a nice economical cicle on the server where you are able to make money from the items that players sell, adjustable tax during cashout. After a player sells their item, they will recieve a notification or the money will be added to them offline. <br><br> Gives you enough wiggle space for search bar, and sorting options. <br><br> Available for any server, no matter if it's a small or big server. ",
         image: "./static/imgs/resell_tablet.jpg",
         stack: ["js", "lua", "sql"],
     },
 };
+
+function getRandomChar() {
+    const chars = '!@#$%^&*()_+-=[]{}|;:,.<>?';
+    return chars[Math.floor(Math.random() * chars.length)];
+}
+
+function glitchText(element, originalText) {
+    let iterations = 0;
+    const maxIterations = 3;
+    const finalText = originalText;
+    let interval;
+
+    clearInterval(element.dataset.glitchInterval);
+
+    interval = setInterval(() => {
+        element.innerText = finalText
+            .split("")
+            .map((letter, index) => {
+                if (index < iterations) {
+                    return finalText[index];
+                }
+                return getRandomChar();
+            })
+            .join("");
+
+        if (iterations >= finalText.length) {
+            clearInterval(interval);
+            element.innerText = finalText;
+        }
+
+        iterations += 1/3;
+    }, 10);
+
+    element.dataset.glitchInterval = interval;
+}
 
 function openModal(projectId) {
     const project = projectData[projectId];
@@ -95,6 +130,13 @@ document.addEventListener('keydown', function(event) {
 document.addEventListener('DOMContentLoaded', function() {
     const projectElements = document.querySelectorAll('.project');
     projectElements.forEach(element => {
+        const titleElement = element.querySelector('h1');
+        const originalText = titleElement.innerText;
+
+        element.addEventListener('mouseenter', () => {
+            glitchText(titleElement, originalText);
+        });
+
         element.addEventListener('click', function() {
             const projectId = this.dataset.project;
             if (projectId && projectData[projectId]) {
