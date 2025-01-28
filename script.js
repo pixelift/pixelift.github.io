@@ -52,7 +52,6 @@ function getRandomChar() {
 
 function glitchText(element, originalText) {
     let iterations = 0;
-    const maxIterations = 3;
     const finalText = originalText;
     let interval;
 
@@ -75,7 +74,7 @@ function glitchText(element, originalText) {
         }
 
         iterations += 1/3;
-    }, 10);
+    }, 15);
 
     element.dataset.glitchInterval = interval;
 }
