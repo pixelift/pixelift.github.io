@@ -131,7 +131,6 @@ body {
 }
 
 .part-label, .icon {
-    font-size: .875rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
     font-weight: 600;
 }
