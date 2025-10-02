@@ -1,166 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="sk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>pixelift portfolio</title>
+    <title>Osobný štít</title>
 
-    <script src="script.js"></script>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/all.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" /> 
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-
 <body>
-    <nav>
-        <ul class="nav-items wrapper">
-            <li><a href="#about">about</a></li>
-            <li><a href="#projects">projects</a></li>
-            <li><a href="#contact">contact</a></li>
-
-            <div class="social-links">
-                <li><a href="https://discord.gg/PCV4KcrUmu" class="discord-link"><i class="fa-brands fa-discord"></i></a></li>
-                <li><a href="mailto:pixelift@proton.me" class="email-link"><i class="fa-solid fa-envelope"></i></a></li>
+    <div id="lang-overlay" class="lang-overlay" style="display:none;">
+        <div class="lang-panel">
+            <div class="lang-title">Hi 👋, I am Vito and this is my personal shield. <br><br>Please choose the language you would like to continue with.</div>
+            <div class="lang-buttons">
+                <button class="lang-button" type="button" data-locale="sk">🇸🇰 Slovensky</button>
+                <button class="lang-button" type="button" data-locale="en">🇬🇧 English</button>
+                <button class="lang-button" type="button" data-locale="ua">🇺🇦 Українська</button>
             </div>
-        </ul>
-    </nav>
-    <main>
-        <section id="about" class="flex">
-            <div class="hero">
-                <h1 class="title">Hi, I'm <span class="color pixelift">Vito</span>,<br>a web dev.
-                    <span class="pixelift-tag">pixelift</span>
-                </h1>
-
-                <p class="subtext">
-                    I'm a self-taught developer from Slovakia. For the past 4 years, I've been coding part-time as a
-                    freelancer. Started with HTML/CSS and JavaScript later on even HTMX, then discovered SQL and
-                    Lua. I prefer simple, straightforward tools over unnecessary complexity—most of the time, plain gets
-                    the job
-                    done.
-                    <br><br>
-                    simplicity is the way to heaven.
-                </p>
-                <div class="button-group">
-                    <a href="#projects" class="button primary">
-                        projects showcase
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
-                            stroke="currentColor" width="20">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" />
-                        </svg>
-                    </a>
-                    <a href="#contact" class="button outline">
-                        get in touch
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" width="20">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
-                        </svg>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects">
-            <h3 class="subtitle">Projects</h3>
-
-            <div class="projects">
-                <div class="project" data-project="racesim">
-                    <img src="./static/imgs/racesim.jpg" alt="RaceSim Project" class="project-image">
-                    <div class="project-data">
-                        <h1>
-                            RaceSim
-                        </h1>
-                        <p>PHP, JQUERY, HTMX</p>
-                    </div>
-                </div>
-                <div class="project" data-project="nolimithost">
-                    <img src="./static/imgs/nolimithost.jpg" alt="Nolimithost Project" class="project-image">
-                    <div class="project-data">
-                        <h1>
-                            Nolimithost
-                        </h1>
-                        <p>PHP, JQUERY, HTMX, FIGMA</p>
-                    </div>
-                </div>
-            </div>
-
-            <h3 class="subtitle">Game Resources</h3>
-            
-            
-            <div class="projects">
-                <div class="project" data-project="loading">
-                    <img src="./static/imgs/loading_screen.jpg" alt="Loading Screen Screenshot" class="project-image">
-                    <div class="project-data">
-                        <h1>
-                            Loading Screen
-                        </h1>
-                        <p>LUA, JS, FIVEM</p>
-                    </div>
-                </div>
-                <div class="project" data-project="resell_tablet">
-                    <img src="./static/imgs/resell_tablet.jpg" alt="Resell Tablet Screenshot" class="project-image">
-                    <div class="project-data">
-                        <h1>
-                            Market Tablet
-                        </h1>
-                        <p>LUA, JS, SQL, FIVEM</p>
-                    </div>
-                </div>
-                <div class="project" data-project="car_market">
-                    <img src="./static/imgs/car_market.png" alt="Car Market Tablet Screenshot" class="project-image">
-                    <div class="project-data">
-                        <h1>
-                            Car Tablet
-                        </h1>
-                        <p>LUA, JS, FIVEM</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="flex flex-col">
-            <h1 class="title color-main">Get In Touch</h1>
-            <p class="subtext" style="text-align: center;">I'm always open to new opportunities and collaborations. Feel free to reach out to me via linkedin or instagram.</p>
-            <div class="button-group" style="justify-content: center;">
-                <a href="https://discord.gg/PCV4KcrUmu" class="button primary">
-                    <i class="fa-brands fa-discord"></i>
-                    Discord
-                </a>
-                <a href="mailto:pixelift@proton.me" class="button primary">
-                    <i class="fa-solid fa-envelope"></i>
-                    Email
-                </a>
-            </div>
-        </section>
-
-        <footer>
-            <p class="copyright">© 2025 pixelift. All rights reserved.</p>
-        </footer>
-    </main>
-
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <span class="close-button" onclick="closeModal()">&times;</span>
-            <div id="modal-content"></div>
         </div>
     </div>
-
-    <script>
-        const nav = document.querySelector('nav');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 0) {
-                nav.style.backgroundColor = 'rgba(18, 18, 18, 0.8)';
-                nav.style.backdropFilter = 'blur(8px)';
-                nav.style.borderBottom = '1px solid rgba(255, 255, 255, 0.05)';
-            } else {
-                nav.style.backgroundColor = 'transparent';
-                nav.style.backdropFilter = 'none';
-                nav.style.borderBottom = 'none';
-            }
-        });
-    </script>
+    <div class="shield"></div>
+    <div class="page-template">
+        <button onclick="closePage()"><i data-lucide="undo-2"></i></button>
+        <div class="header-wrap">
+            <div class="page-icon"></div>
+            <div class="page-label"></div>
+        </div>
+        <div class="page-explanation"></div>
+        <div class="page-paras"></div>
+        <img class="page-bg"></img>
+    </div>
+    <script src="script.js"></script>
 </body>
-
 </html>
