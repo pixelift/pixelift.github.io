@@ -223,7 +223,7 @@ button {
 }
 
 .part-desc {
-    color: #c22a2a;
+    color: #d32525;
     padding: .25rem .5rem;
     border-radius: 4pt;
     backdrop-filter: blur(4px);
@@ -236,16 +236,16 @@ button {
 }
 
 .icon, .page-icon {
-    color: #c22a2a;
+    color: #d32525;
     width: 24px;
 }
 
 .page-explanation {
-    color: #c22a2a;
+    color: #d32525;
 }
 
 .color-primary {
-    color: #c22a2a;
+    color: #d32525;
 }
 
 .part-bg, .page-bg {
