@@ -194,33 +194,22 @@ function openPage(pageKey) {
 
     const item = (window.__CONFIG__ || []).find(p => p.key === pageKey);
     const base = CONFIG[pageKey] || {};
-
-    console.log(base.latin);
     if (!item) return;
     currentPageKey = pageKey;
 
     if (shield) shield.style.display = "none";
 
-    PAGE_TEMPLATE.querySelector(".page-icon").innerHTML = `<i data-lucide=${item.icon}></i>`;
+    PAGE_TEMPLATE.querySelector(".page-icon").innerHTML = `<i data-lucide="${item.icon}"></i>`;
     PAGE_TEMPLATE.querySelector(".page-label").textContent = item.label;
     PAGE_TEMPLATE.querySelector(".page-explanation").textContent = item.desc;
-    // Compose pronunciation display from unified config
-    const pronParts = [];
-    if (base.latin) pronParts.push(`${base.latin}`);
-    if (base.phonemic) pronParts.push(base.phonemic);
-    if (base.phonetic) pronParts.push(base.phonetic);
-    PAGE_TEMPLATE.querySelector(".page-latin").textContent = pronParts.join("  ");
-    PAGE_TEMPLATE.querySelector(".page-paras").innerHTML = "";
+    PAGE_TEMPLATE.querySelector(".page-latin").textContent = [base.latin, base.phonemic, base.phonetic]
+        .filter(Boolean)
+        .join("  ");
 
-    let paraHTML = "";
-    const configParas = item.paras;
-    if (configParas) {
-        (configParas).forEach(para => {
-            paraHTML = paraHTML + `<p>${para}</p>`
-        });
-
-        PAGE_TEMPLATE.querySelector(".page-paras").innerHTML = paraHTML;
-    };
+    const configParas = item.paras || [];
+    PAGE_TEMPLATE.querySelector(".page-paras").innerHTML = configParas
+        .map(para => `<p>${para}</p>`)
+        .join("");
     
     const bgImg = PAGE_TEMPLATE.querySelector(".page-bg");
     
@@ -243,8 +232,8 @@ function closePage() {
 
 function renderShield() {
     if (!shield) return;
-    const CONFIG = localizeConfig(currentLocale);
-    const partsHtml = CONFIG.map(({ key, label, desc, image, icon, latin, phonemic, phonetic }) => {
+    const localizedConfig = localizeConfig(currentLocale);
+    const partsHtml = localizedConfig.map(({ key, label, desc, image, icon, latin, phonemic, phonetic }) => {
         const iconHtml = icon ? `<i data-lucide="${icon}" class="icon"></i>` : "";
         return `
         <button class="shield-part" type="button" aria-label="${label}: ${desc}" data-key="${key}" onclick="openPage('${key}')">
@@ -256,13 +245,13 @@ function renderShield() {
                 <div class="part-desc">${desc}</div>
                 <div class="part-latin">${latin} ${phonemic} ${phonetic}</div>
             </div>
-            <img class="part-bg" src=${image}></img>
+            <img class="part-bg" src="${image}" />
         </button>`;
     }).join("");
 
     shield.innerHTML = partsHtml;
 
-    window.__CONFIG__ = CONFIG;
+    window.__CONFIG__ = localizedConfig;
 
     if (window.lucide && typeof lucide.createIcons === 'function') {
         lucide.createIcons();
@@ -272,9 +261,6 @@ function renderShield() {
 window.setLocale = function (locale) {
     if (!LOCALES[locale]) return;
     currentLocale = locale;
-    
-    console.log(anyPageOpen, currentPageKey)
-
     if (anyPageOpen && currentPageKey) {
         openPage(currentPageKey);
     } else {
