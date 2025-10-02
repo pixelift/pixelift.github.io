@@ -167,12 +167,12 @@ const LOCALES = {
 
 // Single, key-based config including pronunciation fields
 const CONFIG = {
-    pattern: { image_align: "center", icon: "star", image: "pattern.webp", latin: "mater matris", phonemic: "/ˈmaː.tɛr ˈmaː.tris/", phonetic: "[ˈmaː.tɛr ˈmaː.trɪs]" },
-    strong:  { image_align: "center", icon: "dumbbell", image: "strong.webp", latin: "perfectus",      phonemic: "/pɛrˈfɛk.tus/",               phonetic: "[pɛrˈfɛk.tʊs]" },
-    animal:  { image_align: "right",  icon: "paw-print", image: "animal.webp",  latin: "noctua",         phonemic: "/ˈnok.tu.a/",               phonetic: "[ˈnɔk.tʊ.a]" },
-    source:  { image_align: "center", icon: "battery-charging", image: "source.webp", latin: "relaxo",   phonemic: "/rɛˈlak.soː/",               phonetic: "[rɛˈlaks.oː]" },
-    success: { image_align: "center", icon: "trophy",   image: "success.webp", latin: "operor",          phonemic: "/ˈo.pɛ.ror/",               phonetic: "[ˈɔ.pɛ.rɔr]" },
-    goal:    { image_align: "center", icon: "target",   image: "goal.webp",    latin: "officium",        phonemic: "/ofˈfi.ki.um/",             phonetic: "[ɔfˈfi.ki.um]" }
+    pattern: { image_align: "center", icon: "star", image: "static/pattern.webp", latin: "mater matris", phonemic: "/ˈmaː.tɛr ˈmaː.tris/", phonetic: "[ˈmaː.tɛr ˈmaː.trɪs]" },
+    strong:  { image_align: "center", icon: "dumbbell", image: "static/strong.webp", latin: "perfectus",      phonemic: "/pɛrˈfɛk.tus/",               phonetic: "[pɛrˈfɛk.tʊs]" },
+    animal:  { image_align: "right",  icon: "paw-print", image: "static/animal.webp",  latin: "noctua",         phonemic: "/ˈnok.tu.a/",               phonetic: "[ˈnɔk.tʊ.a]" },
+    source:  { image_align: "center", icon: "battery-charging", image: "static/source.webp", latin: "relaxo",   phonemic: "/rɛˈlak.soː/",               phonetic: "[rɛˈlaks.oː]" },
+    success: { image_align: "center", icon: "trophy",   image: "static/success.webp", latin: "operor",          phonemic: "/ˈo.pɛ.ror/",               phonetic: "[ˈɔ.pɛ.rɔr]" },
+    goal:    { image_align: "center", icon: "target",   image: "static/goal.webp",    latin: "officium",        phonemic: "/ofˈfi.ki.um/",             phonetic: "[ɔfˈfi.ki.um]" }
 };
 
 function localizeConfig(locale) {

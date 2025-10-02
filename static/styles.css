@@ -262,8 +262,8 @@ button {
 }
 
 .page-paras p {
-    --__border_left: 3px;
-    border-left: var(--__border_left) solid white;
+    --__border_left: 2px;
+    border-left: var(--__border_left) solid rgb(150, 150, 150);
     padding-left: calc(var(--__border_left) * 3);
     text-wrap: balance;
     line-height: 1.75;
