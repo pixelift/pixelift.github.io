@@ -206,9 +206,9 @@ function openPage(pageKey) {
     PAGE_TEMPLATE.querySelector(".page-explanation").textContent = item.desc;
     // Compose pronunciation display from unified config
     const pronParts = [];
+    if (base.latin) pronParts.push(`${base.latin}`);
     if (base.phonemic) pronParts.push(base.phonemic);
     if (base.phonetic) pronParts.push(base.phonetic);
-    if (base.latin) pronParts.push(`⟨${base.latin}⟩`);
     PAGE_TEMPLATE.querySelector(".page-latin").textContent = pronParts.join("  ");
     PAGE_TEMPLATE.querySelector(".page-paras").innerHTML = "";
 
@@ -244,7 +244,7 @@ function closePage() {
 function renderShield() {
     if (!shield) return;
     const CONFIG = localizeConfig(currentLocale);
-    const partsHtml = CONFIG.map(({ key, label, desc, image, icon, image_align }) => {
+    const partsHtml = CONFIG.map(({ key, label, desc, image, icon, latin, phonemic, phonetic }) => {
         const iconHtml = icon ? `<i data-lucide="${icon}" class="icon"></i>` : "";
         return `
         <button class="shield-part" type="button" aria-label="${label}: ${desc}" data-key="${key}" onclick="openPage('${key}')">
@@ -252,7 +252,10 @@ function renderShield() {
                 <div class="part-label">${label}</div>
                 ${iconHtml}    
             </div>    
-            <div class="part-desc">${desc}</div>
+            <div>            
+                <div class="part-desc">${desc}</div>
+                <div class="part-latin">${latin} ${phonemic} ${phonetic}</div>
+            </div>
             <img class="part-bg" src=${image}></img>
         </button>`;
     }).join("");

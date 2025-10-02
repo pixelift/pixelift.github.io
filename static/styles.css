@@ -252,9 +252,14 @@ button {
     filter: blur(2px) saturate(0);
 }
 
-.page-latin {
+.page-latin, .part-latin {
     opacity: .75;
     font-size: .875rem;
+}
+
+.part-latin {
+    font-size: .625rem;
+    margin-top: 4px;
 }
 
 .page-explanation {
