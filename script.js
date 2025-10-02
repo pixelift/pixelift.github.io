@@ -165,66 +165,37 @@ const LOCALES = {
     }
 };
 
-const BASE_CONFIG = [
-    { image_align: "center", key: "pattern", icon: "star", image: "pattern.webp", latin: "mater matris" },
-    { image_align: "center", key: "strong", icon: "dumbbell", image: "strong.webp", latin: "perfectus" },
-    { image_align: "right", key: "animal", icon: "paw-print", image: "animal.webp", latin: "noctua" },
-    { image_align: "center", key: "source", icon: "battery-charging", image: "source.webp", latin: "relaxo" },
-    { image_align: "center", key: "success", icon: "trophy", image: "success.webp", latin: "operor" },
-    { image_align: "center", key: "goal", icon: "target", image: "goal.webp", latin: "officium" }
-];
-
-// Optional pronunciations per item. Use /…/ for phonemic and […] for phonetic.
-// Populate as needed; if empty, the UI will just show the Latin form in ⟨…⟩.
-const PRONUNCIATIONS = {
-    pattern: {
-        // māter mātris
-        phonemic: "/ˈmaː.tɛr ˈmaː.tris/",
-        phonetic: "[ˈmaː.tɛr ˈmaː.trɪs]"
-    },
-    strong: {
-        // perfectus (Classical Latin)
-        phonemic: "/pɛrˈfɛk.tus/",
-        phonetic: "[pɛrˈfɛk.tʊs]"
-    },
-    animal: {
-        // noctua
-        phonemic: "/ˈnok.tu.a/",
-        phonetic: "[ˈnɔk.tʊ.a]"
-    },
-    source: {
-        // relaxō
-        phonemic: "/rɛˈlak.soː/",
-        phonetic: "[rɛˈlaks.oː]"
-    },
-    success: {
-        // operor
-        phonemic: "/ˈo.pɛ.ror/",
-        phonetic: "[ˈɔ.pɛ.rɔr]"
-    },
-    goal: {
-        // officium
-        phonemic: "/ofˈfi.ki.um/",
-        phonetic: "[ɔfˈfi.ki.um]"
-    }
+// Single, key-based config including pronunciation fields
+const CONFIG = {
+    pattern: { image_align: "center", icon: "star", image: "pattern.webp", latin: "mater matris", phonemic: "/ˈmaː.tɛr ˈmaː.tris/", phonetic: "[ˈmaː.tɛr ˈmaː.trɪs]" },
+    strong:  { image_align: "center", icon: "dumbbell", image: "strong.webp", latin: "perfectus",      phonemic: "/pɛrˈfɛk.tus/",               phonetic: "[pɛrˈfɛk.tʊs]" },
+    animal:  { image_align: "right",  icon: "paw-print", image: "animal.webp",  latin: "noctua",         phonemic: "/ˈnok.tu.a/",               phonetic: "[ˈnɔk.tʊ.a]" },
+    source:  { image_align: "center", icon: "battery-charging", image: "source.webp", latin: "relaxo",   phonemic: "/rɛˈlak.soː/",               phonetic: "[rɛˈlaks.oː]" },
+    success: { image_align: "center", icon: "trophy",   image: "success.webp", latin: "operor",          phonemic: "/ˈo.pɛ.ror/",               phonetic: "[ˈɔ.pɛ.rɔr]" },
+    goal:    { image_align: "center", icon: "target",   image: "goal.webp",    latin: "officium",        phonemic: "/ofˈfi.ki.um/",             phonetic: "[ɔfˈfi.ki.um]" }
 };
 
 function localizeConfig(locale) {
     const dict = LOCALES[locale] || LOCALES.sk;
-    return BASE_CONFIG.map(item => {
-        const l = dict[item.key] || {};
-        return { ...item, label: l.label || item.key, desc: l.desc || "", paras: l.paras };
+    return Object.entries(CONFIG).map(([key, base]) => {
+        const l = dict[key] || {};
+        return { key, ...base, label: l.label || key, desc: l.desc || "", paras: l.paras };
     });
+}
+
+function openPageTemplate() {
+    PAGE_TEMPLATE.style.display = "block";
+    anyPageOpen = true;
+    lucide.createIcons();
 }
 
 function openPage(pageKey) {
     if (!PAGE_TEMPLATE) return;
 
     const item = (window.__CONFIG__ || []).find(p => p.key === pageKey);
-    const latin = (BASE_CONFIG || []).find(p => p.key === pageKey)?.latin || "";
-    const pron = PRONUNCIATIONS[pageKey] || {};
+    const base = CONFIG[pageKey] || {};
 
-    console.log(latin);
+    console.log(base.latin);
     if (!item) return;
     currentPageKey = pageKey;
 
@@ -233,11 +204,11 @@ function openPage(pageKey) {
     PAGE_TEMPLATE.querySelector(".page-icon").innerHTML = `<i data-lucide=${item.icon}></i>`;
     PAGE_TEMPLATE.querySelector(".page-label").textContent = item.label;
     PAGE_TEMPLATE.querySelector(".page-explanation").textContent = item.desc;
-    // Compose pronunciation display: /…/ (phonemic) […] (phonetic) ⟨…⟩ (spelling)
+    // Compose pronunciation display from unified config
     const pronParts = [];
-    if (pron.phonemic) pronParts.push(pron.phonemic);
-    if (pron.phonetic) pronParts.push(pron.phonetic);
-    if (latin) pronParts.push(`⟨${latin}⟩`);
+    if (base.phonemic) pronParts.push(base.phonemic);
+    if (base.phonetic) pronParts.push(base.phonetic);
+    if (base.latin) pronParts.push(`⟨${base.latin}⟩`);
     PAGE_TEMPLATE.querySelector(".page-latin").textContent = pronParts.join("  ");
     PAGE_TEMPLATE.querySelector(".page-paras").innerHTML = "";
 
@@ -251,12 +222,17 @@ function openPage(pageKey) {
         PAGE_TEMPLATE.querySelector(".page-paras").innerHTML = paraHTML;
     };
     
-    PAGE_TEMPLATE.querySelector(".page-bg").src = item.image;
-
-    PAGE_TEMPLATE.style.display = "block";
-    anyPageOpen = true;
-
-    lucide.createIcons();
+    const bgImg = PAGE_TEMPLATE.querySelector(".page-bg");
+    
+    if (bgImg) {
+        bgImg.src = item.image;
+        if (bgImg.complete && bgImg.naturalWidth > 0) {
+            openPageTemplate();
+        } else {
+            bgImg.onload = function () { openPageTemplate(); };
+            bgImg.onerror = function () { console.warn("Failed to load page background image:", item.image); };
+        }
+    }
 }
 
 function closePage() {
@@ -285,7 +261,9 @@ function renderShield() {
 
     window.__CONFIG__ = CONFIG;
 
-    lucide.createIcons();
+    if (window.lucide && typeof lucide.createIcons === 'function') {
+        lucide.createIcons();
+    }
 }
 
 window.setLocale = function (locale) {
@@ -307,7 +285,6 @@ function showLanguagePicker() {
 }
 
 $(function () {
-    const PAGE_TEMPLATE = document.querySelector('.page-template');
     if (!$('.shield').length) return;
 
     $(document).on('keydown', function (e) {
@@ -315,7 +292,6 @@ $(function () {
             closePage();
         }
     });
-
 
     $(document).on('click', '#lang-overlay .lang-button', function () {
         const code = $(this).data('locale');
