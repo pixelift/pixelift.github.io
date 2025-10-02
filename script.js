@@ -166,13 +166,48 @@ const LOCALES = {
 };
 
 const BASE_CONFIG = [
-    { image_align: "center", key: "pattern", icon: "shapes", image: "pattern.webp" },
-    { image_align: "center", key: "strong", icon: "dumbbell", image: "strong.webp" },
-    { image_align: "right", key: "animal", icon: "paw-print", image: "animal.webp" },
-    { image_align: "center", key: "success", icon: "trophy", image: "success.webp" },
-    { image_align: "center", key: "source", icon: "battery-charging", image: "source.webp" },
-    { image_align: "center", key: "goal", icon: "target", image: "goal.webp" }
+    { image_align: "center", key: "pattern", icon: "star", image: "pattern.webp", latin: "mater matris" },
+    { image_align: "center", key: "strong", icon: "dumbbell", image: "strong.webp", latin: "perfectus" },
+    { image_align: "right", key: "animal", icon: "paw-print", image: "animal.webp", latin: "noctua" },
+    { image_align: "center", key: "source", icon: "battery-charging", image: "source.webp", latin: "relaxo" },
+    { image_align: "center", key: "success", icon: "trophy", image: "success.webp", latin: "operor" },
+    { image_align: "center", key: "goal", icon: "target", image: "goal.webp", latin: "officium" }
 ];
+
+// Optional pronunciations per item. Use /…/ for phonemic and […] for phonetic.
+// Populate as needed; if empty, the UI will just show the Latin form in ⟨…⟩.
+const PRONUNCIATIONS = {
+    pattern: {
+        // māter mātris
+        phonemic: "/ˈmaː.tɛr ˈmaː.tris/",
+        phonetic: "[ˈmaː.tɛr ˈmaː.trɪs]"
+    },
+    strong: {
+        // perfectus (Classical Latin)
+        phonemic: "/pɛrˈfɛk.tus/",
+        phonetic: "[pɛrˈfɛk.tʊs]"
+    },
+    animal: {
+        // noctua
+        phonemic: "/ˈnok.tu.a/",
+        phonetic: "[ˈnɔk.tʊ.a]"
+    },
+    source: {
+        // relaxō
+        phonemic: "/rɛˈlak.soː/",
+        phonetic: "[rɛˈlaks.oː]"
+    },
+    success: {
+        // operor
+        phonemic: "/ˈo.pɛ.ror/",
+        phonetic: "[ˈɔ.pɛ.rɔr]"
+    },
+    goal: {
+        // officium
+        phonemic: "/ofˈfi.ki.um/",
+        phonetic: "[ɔfˈfi.ki.um]"
+    }
+};
 
 function localizeConfig(locale) {
     const dict = LOCALES[locale] || LOCALES.sk;
@@ -186,6 +221,10 @@ function openPage(pageKey) {
     if (!PAGE_TEMPLATE) return;
 
     const item = (window.__CONFIG__ || []).find(p => p.key === pageKey);
+    const latin = (BASE_CONFIG || []).find(p => p.key === pageKey)?.latin || "";
+    const pron = PRONUNCIATIONS[pageKey] || {};
+
+    console.log(latin);
     if (!item) return;
     currentPageKey = pageKey;
 
@@ -194,6 +233,12 @@ function openPage(pageKey) {
     PAGE_TEMPLATE.querySelector(".page-icon").innerHTML = `<i data-lucide=${item.icon}></i>`;
     PAGE_TEMPLATE.querySelector(".page-label").textContent = item.label;
     PAGE_TEMPLATE.querySelector(".page-explanation").textContent = item.desc;
+    // Compose pronunciation display: /…/ (phonemic) […] (phonetic) ⟨…⟩ (spelling)
+    const pronParts = [];
+    if (pron.phonemic) pronParts.push(pron.phonemic);
+    if (pron.phonetic) pronParts.push(pron.phonetic);
+    if (latin) pronParts.push(`⟨${latin}⟩`);
+    PAGE_TEMPLATE.querySelector(".page-latin").textContent = pronParts.join("  ");
     PAGE_TEMPLATE.querySelector(".page-paras").innerHTML = "";
 
     let paraHTML = "";
