@@ -97,6 +97,15 @@ body {
     grid-template-rows: repeat(3, 1fr);
     padding: 4px;
     gap: 4px;
+    padding-bottom: 4rem;
+}
+
+.motto {
+    position: absolute;
+    color: white;
+    bottom: 1.25rem;
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .shield-part {

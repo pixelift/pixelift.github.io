@@ -165,6 +165,12 @@ const LOCALES = {
     }
 };
 
+const MOTTO = {
+    sk: "Len preto, že nemôžeš vidieť to, neznamená to, že to nie je tam.",
+    en: "Just because you can't see it, doesn't mean it's not there.",
+    ua: "Просто тому, що ти не можеш його побачити, не значить, що він не є там."
+};
+
 // Single, key-based config including pronunciation fields
 const CONFIG = {
     pattern: { image_align: "center", icon: "star", image: "static/pattern.webp", latin: "mater matris", phonemic: "/ˈmaː.tɛr ˈmaː.tris/", phonetic: "[ˈmaː.tɛr ˈmaː.trɪs]" },
@@ -253,6 +259,8 @@ function renderShield() {
 
     window.__CONFIG__ = localizedConfig;
 
+    document.querySelector(".motto").textContent = MOTTO[currentLocale];
+
     if (window.lucide && typeof lucide.createIcons === 'function') {
         lucide.createIcons();
     }
@@ -271,6 +279,7 @@ window.setLocale = function (locale) {
 function showLanguagePicker() {
     $('#lang-overlay').show();
     $('.shield').hide();
+    $('.motto').hide();
 }
 
 $(function () {
@@ -289,6 +298,7 @@ $(function () {
         try { localStorage.setItem('locale', code); } catch (e) {}
         $('#lang-overlay').hide();
         $('.shield').css('display', 'grid');
+        $('.motto').show();
     });
 
     showLanguagePicker();
