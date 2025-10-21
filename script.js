@@ -9,8 +9,8 @@ const LOCALES = {
             label: "Inšpirácia",
             desc: "Mama",
             paras: [
-                "Na svoju mamu myslím v tom najpozitívnejšom svetle. Veľa si prežila a v mnohých situáciách je pre mňa vzorom.",
-                "Vždy stála pri mne a dávala mi životné rady — ako mama aj ako priateľka. V mojom živote zohráva obe úlohy."
+                "Na svoju mamu spomínam vždy v tom najlepšom svetle. Veľa si prežila a v mnohých situáciách je pre mňa vzorom.",
+                "Vždy stála pri mne a dávala mi životné rady – ako mama aj ako priateľka. V mojom živote zohráva obe tieto úlohy."
             ]
         },
         strong: {
@@ -18,7 +18,7 @@ const LOCALES = {
             desc: "Perfekcionizmus",
             paras: [
                 "Povedal by som, že som perfekcionista; zvyknem sa sústreďovať na detaily. Keď si všimnem drobnú chybu alebo nepresnosť, už ju neviem nevidieť.",
-                "Táto vlastnosť mi pomáha vidieť detaily, ktoré si väčšina ľudí nevšimne — čo je veľmi užitočné, hoci niekedy aj trochu otravné."
+                "Táto vlastnosť mi pomáha všímať si detaily, ktoré väčšina ľudí prehliadne – čo je veľmi užitočné, hoci niekedy aj trochu otravné."
             ]
         },
         animal: { 
@@ -26,17 +26,17 @@ const LOCALES = {
             desc: "Sova",
             paras: [
                 "Nočná sova ma vystihuje; nie som ranný typ, ale v noci som veľmi produktívny.",
-                "Ak by som si mal vybrať medzi nocou a dňom, vždy si zvolím noc; radšej pôjdem spať neskoro, než by som vstával skoro.",
-                "Neznamená to, že sa zabávam do druhej ráno; znamená to, že ak mám prácu, urobím ju večer alebo v noci."
+                "Ak by som si mal vybrať medzi nocou a dňom, vždy si zvolím noc – radšej pôjdem spať neskoro, než by som vstával skoro.",
+                "Neznamená to, že sa zabávam do druhej ráno; skôr to, že ak mám prácu, urobím ju večer alebo v noci."
             ]
         },
         success: { 
             label: "Najväčší úspech",
-            desc: "Práca ako hobby",
+            desc: "Práca, ktorá je zároveň hobby",
             paras: [
                 "Po strednej škole som začal pracovať ako webový vývojár a pridal som sa k trojčlennému tímu.",
-                "Šesť mesiacov sme pracovali na rôznych projektoch, ale rozhodli sme sa skončiť, pretože sme nemali dosť času hľadať nových klientov.",
-                "Ak by som mal pomenovať svoj najväčší úspech, bolo by to, že som mohol pracovať s takýmto tímom a robiť niečo, čo ma naozaj baví."
+                "Šesť mesiacov sme pracovali na rôznych projektoch, no nakoniec sme sa rozhodli skončiť, pretože sme nemali dosť času hľadať nových klientov.",
+                "Ak by som mal pomenovať svoj najväčší úspech, bol by to fakt, že som mohol pracovať s takýmto tímom a robiť niečo, čo ma naozaj baví."
             ]
         },
         source: { 
@@ -53,7 +53,7 @@ const LOCALES = {
             paras: [
                 "Mnohí hovoria, že chcú finančnú slobodu a veľa peňazí.",
                 "Môj cieľ je trochu iný: chcem chodiť do práce a pracovať usilovne, ale na veciach, ktoré ma zaujímajú.",
-                "Chcem sa vracať z práce nevyčerpaný a mať čas na svoje budúce deti."
+                "Chcem sa vracať z práce nie vyčerpaný, ale spokojný – a mať čas na svoje budúce deti."
             ]
         }
     },
@@ -62,8 +62,8 @@ const LOCALES = {
             label: "Inspiration",
             desc: "Mother",
             paras: [
-                "I think of my mother in the most positive light. She has endured a lot, and I look up to her in many situations in my life.",
-                "She has always been by my side, offering life advice—both as a mother and as a friend. In my life, she plays both roles."
+                "I always think of my mother in the best light. She’s been through a lot, and I look up to her in many situations.",
+                "She has always stood by my side, offering life advice—both as a mother and as a friend. In my life, she truly plays both roles."
             ]
         },
         strong: {
@@ -71,33 +71,33 @@ const LOCALES = {
             desc: "Perfectionism",
             paras: [
                 "I’d say I’m a perfectionist; I tend to focus on details. When I notice a tiny flaw or misalignment, I can’t unsee it.",
-                "This trait helps me see details most people don’t, which can be very useful—though a bit annoying at times."
+                "This trait helps me notice things most people overlook—it’s very useful, though sometimes a bit annoying."
             ]
         },
         animal: { 
             label: "Animal",
             desc: "Owl",
             paras: [
-                "A night owl represents me well; I’m not a morning person, but I’m very productive at night.",
-                "If I had to choose between night and day, I’d choose night every time; I’d rather stay up late than wake up early.",
-                "This doesn’t mean I’m out partying until 2 a.m.; it means that if I have work to do, I’ll do it in the evening or at night."
+                "A night owl describes me well; I’m not a morning person, but I’m very productive at night.",
+                "If I had to choose between night and day, I’d pick night every time—I’d rather stay up late than wake up early.",
+                "It doesn’t mean I’m out partying until 2 a.m.; it just means that if I have work to do, I’ll usually do it in the evening or at night."
             ]
         },
         success: { 
             label: "Greatest Success",
-            desc: "Work as a hobby",
+            desc: "Work that feels like a hobby",
             paras: [
-                "After finishing high school, I started working as a web developer and joined a three‑person team.",
-                "We worked on all kinds of projects for six months, but we decided to stop because we didn’t have enough time to find new clients.",
-                "If I had to name my greatest success, it would be having worked with such a team and doing something I truly enjoy."
+                "After finishing high school, I started working as a web developer and joined a three-person team.",
+                "We worked on various projects for six months, but eventually decided to stop because we didn’t have enough time to find new clients.",
+                "If I had to name my greatest success, it would be having the chance to work with such a team and do something I truly enjoy."
             ]
         },
         source: { 
             label: "Source of Strength",
             desc: "Videos & Games",
             paras: [
-                "I relax by playing games or binge‑watching YouTube; more often than not, I end up watching videos.",
-                "I mostly watch political videos from Slovakia and from abroad. It’s interesting to see what people do elsewhere and how they think differently from us."
+                "I relax by playing games or watching YouTube; more often than not, I end up watching videos.",
+                "I mostly watch political content from Slovakia and abroad. It’s fascinating to see what people elsewhere are doing and how they think differently from us."
             ]
         },
         goal: { 
@@ -105,8 +105,8 @@ const LOCALES = {
             desc: "Perfect Job",
             paras: [
                 "Many people say they want financial freedom and lots of money.",
-                "My goal is a bit different: I still want to go to work and work hard, but on things I find interesting.",
-                "I want to come home from work not exhausted and have time for my future children."
+                "My goal is a bit different: I want to go to work and work hard, but on things that genuinely interest me.",
+                "I want to come home from work feeling fulfilled, not drained—and still have time for my future children."
             ]
         }
     },
@@ -115,16 +115,16 @@ const LOCALES = {
             label: "Натхнення",
             desc: "Мати",
             paras: [
-                "Я думаю про свою маму в найпозитивнішому світлі. Вона багато пережила, і в багатьох ситуаціях я рівняюся на неї.",
-                "Вона завжди була поруч, даючи життєві поради — і як мама, і як подруга. У моєму житті вона виконує обидві ролі."
+                "Я завжди думаю про свою маму у найкращому світлі. Вона багато пережила, і в багатьох ситуаціях я рівняюся на неї.",
+                "Вона завжди була поруч, даючи життєві поради — і як мама, і як подруга. У моєму житті вона виконує обидві ці ролі."
             ]
         },
         strong: {
             label: "Сильна сторона",
             desc: "Перфекціонізм",
             paras: [
-                "Я б сказав, що я перфекціоніст; зазвичай зосереджуюся на деталях. Коли помічаю найменший недолік або перекіс, більше не можу його не бачити.",
-                "Ця риса допомагає мені бачити деталі, яких більшість не помічає — це дуже корисно, хоч іноді й трохи дратує."
+                "Я б сказав, що я — перфекціоніст; зазвичай зосереджуюся на деталях. Коли помічаю найменшу помилку або перекіс, вже не можу цього не бачити.",
+                "Ця риса допомагає мені помічати деталі, яких більшість людей не бачить — це дуже корисно, хоч іноді й трохи дратує."
             ]
         },
         animal: {
@@ -132,34 +132,34 @@ const LOCALES = {
             desc: "Сова",
             paras: [
                 "Нічна сова добре мене описує; я не ранкова людина, але вночі дуже продуктивний.",
-                "Якби довелося обирати між ніччю і днем, я щоразу обрав би ніч; краще ляжу пізно, ніж прокинуся рано.",
-                "Це не означає, що я гуляю до другої ночі; це означає, що якщо є робота, я зроблю її ввечері або вночі."
+                "Якби довелося обирати між ніччю і днем, я щоразу обрав би ніч — краще ляжу пізно, ніж прокинуся рано.",
+                "Це не означає, що я гуляю до другої ночі; це лише означає, що якщо є робота, я зроблю її ввечері або вночі."
             ]
         },
         success: {
             label: "Найбільше досягнення",
-            desc: "Робота як хобі",
+            desc: "Робота, яка є хобі",
             paras: [
                 "Після закінчення школи я почав працювати веброзробником і приєднався до команди з трьох людей.",
-                "Ми працювали над різними проєктами шість місяців, але вирішили зупинитися, бо нам бракувало часу шукати нових клієнтів.",
-                "Якби назвати моє найбільше досягнення, то це можливість працювати з такою командою і робити те, що мені справді подобається."
+                "Ми працювали над різними проєктами протягом шести місяців, але вирішили зупинитися, бо нам бракувало часу на пошук нових клієнтів.",
+                "Якби мені довелося назвати своє найбільше досягнення, це була б можливість працювати з такою командою і робити те, що мені справді подобається."
             ]
         },
         source: {
             label: "Джерело сили",
             desc: "Відео та ігри",
             paras: [
-                "Відпочиваю, граючи в ігри або запоєм дивлячись YouTube; частіше за все все ж дивлюся відео.",
-                "Переважно дивлюся політичні відео зі Словаччини та з-за кордону. Цікаво бачити, що роблять люди в інших місцях і як вони мислять інакше за нас."
+                "Я відпочиваю, граючи в ігри або дивлячись YouTube; частіше за все все ж обираю відео.",
+                "Переважно дивлюся політичні відео зі Словаччини та з-за кордону. Цікаво бачити, що роблять люди в інших країнах і як вони мислять інакше, ніж ми."
             ]
         },
         goal: {
             label: "Життєва мета",
-            desc: "Ідеальна робота",
+            desc: "Робота мрії",
             paras: [
                 "Багато людей кажуть, що хочуть фінансової свободи та багато грошей.",
-                "Моя мета трохи інша: я все ж хочу ходити на роботу й наполегливо працювати, але над тим, що мені цікаво.",
-                "Я хочу повертатися з роботи не виснаженим і мати час для майбутніх дітей."
+                "Моя мета трохи інша: я все ж хочу ходити на роботу й наполегливо працювати, але над тим, що мені справді цікаво.",
+                "Я хочу повертатися з роботи не виснаженим, а задоволеним — і мати час для своїх майбутніх дітей."
             ]
         }
     }
