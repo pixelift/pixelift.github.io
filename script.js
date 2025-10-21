@@ -166,12 +166,11 @@ const LOCALES = {
 };
 
 const MOTTO = {
-    sk: "Len preto, že nemôžeš vidieť to, neznamená to, že to nie je tam.",
-    en: "Just because you can't see it, doesn't mean it's not there.",
-    ua: "Просто тому, що ти не можеш його побачити, не значить, що він не є там."
+    sk: `Acta non verba — "Skutky, nie slová"`,
+    en: `Acta non verba — "Deeds, not words"`,
+    ua: `Acta non verba — "Справи, а не слова"`
 };
 
-// Single, key-based config including pronunciation fields
 const CONFIG = {
     pattern: { image_align: "center", icon: "star", image: "static/pattern.webp", latin: "mater matris", phonemic: "/ˈmaː.tɛr ˈmaː.tris/", phonetic: "[ˈmaː.tɛr ˈmaː.trɪs]" },
     strong:  { image_align: "center", icon: "dumbbell", image: "static/strong.webp", latin: "perfectus",      phonemic: "/pɛrˈfɛk.tus/",               phonetic: "[pɛrˈfɛk.tʊs]" },
