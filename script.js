@@ -166,9 +166,9 @@ const LOCALES = {
 };
 
 const MOTTO = {
-    sk: `Acta non verba — "Skutky, nie slová"`,
-    en: `Acta non verba — "Deeds, not words"`,
-    ua: `Acta non verba — "Справи, а не слова"`
+    sk: `It is what it is`,
+    en: `It is what it is`,
+    ua: `It is what it is`
 };
 
 const CONFIG = {
